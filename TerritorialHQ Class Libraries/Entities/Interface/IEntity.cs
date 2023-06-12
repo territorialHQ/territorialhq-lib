@@ -5,6 +5,6 @@ namespace TerritorialHQ_Library.Entities
     public interface IEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        string Id { get; set; }
+        string? Id { get; set; }
     }
 }

@@ -10,8 +10,8 @@ namespace TerritorialHQ_Library.Entities
     public class TokenClient : IEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; }
-        public string Name { get; set; }
-        public string ReturnUrl { get; set; }
+        public string? Id { get; set; }
+        public string? Name { get; set; }
+        public string? ReturnUrl { get; set; }
     }
 }
