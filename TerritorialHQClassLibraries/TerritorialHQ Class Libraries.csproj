@@ -5,6 +5,7 @@
     <RootNamespace>TerritorialHQ_Library</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>tthq-lib</AssemblyName>
   </PropertyGroup>
 
 </Project>

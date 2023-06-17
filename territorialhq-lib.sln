@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TerritorialHQ Class Libraries", "TerritorialHQ Class Libraries\TerritorialHQ Class Libraries.csproj", "{855FBBE2-9BC8-4147-B019-A9B21B69369D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerritorialHQ Class Libraries", "TerritorialHQClassLibraries\TerritorialHQ Class Libraries.csproj", "{D81A2E5F-A012-4A61-A053-456AA71415B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{855FBBE2-9BC8-4147-B019-A9B21B69369D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{855FBBE2-9BC8-4147-B019-A9B21B69369D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{855FBBE2-9BC8-4147-B019-A9B21B69369D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{855FBBE2-9BC8-4147-B019-A9B21B69369D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81A2E5F-A012-4A61-A053-456AA71415B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81A2E5F-A012-4A61-A053-456AA71415B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81A2E5F-A012-4A61-A053-456AA71415B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81A2E5F-A012-4A61-A053-456AA71415B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

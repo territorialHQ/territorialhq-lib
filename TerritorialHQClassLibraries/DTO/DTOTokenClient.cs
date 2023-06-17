@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TerritorialHQ_Library.DTO.Interface;
+using TerritorialHQ_Library.Entities;
 
-namespace TerritorialHQ_Library.Entities
+namespace TerritorialHQ_Library.DTO
 {
-    public class TokenClient : IEntity
+    public class DTOTokenClient : IDto
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string? Id { get; set; }
         public string? Name { get; set; }
         public string? ReturnUrl { get; set; }
+
     }
 }
