@@ -53,6 +53,7 @@ public class JournalArticle : IEntity
         var dto = new DTOJournalArticle();
 
         dto.Id = this.Id;
+        dto.Author = this.Creator;
         dto.Title = this.Title;
         dto.Subtitle = this.Subtitle;
         dto.PublishFrom = this.PublishFrom;
@@ -79,5 +80,23 @@ public class JournalArticle : IEntity
         this.Image = article.Image;
         this.Tags = article.Tags;
         this.IsSticky = article.IsSticky;
+    }
+
+    public DTOJournalArticleListEntry GetDtoListEntry()
+    {
+        var dto = new DTOJournalArticleListEntry
+        {
+            Id = this.Id,
+            Author = this.Creator,
+            Title = this.Title,
+            Subtitle = this.Subtitle,
+            PublishFrom = this.PublishFrom,
+            IsPublished = (DateTime.Now >= this.PublishFrom) && (PublishTo == null ? true : DateTime.Now <= this.PublishTo),
+            Teaser = this.Teaser,
+            Image = this.Image,
+            IsSticky = this.IsSticky
+        };
+
+        return dto;
     }
 }

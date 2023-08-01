@@ -32,6 +32,7 @@ public class AppUser : IEntity
         this.UserName = user.UserName;
         this.Role = user.Role;
         this.DiscordId = user.DiscordId;
+        this.Public = user.Public;
     }
     public IDto GetDto()
     {
@@ -42,7 +43,7 @@ public class AppUser : IEntity
         dto.UserName = this.UserName;
         dto.DiscordId = this.DiscordId;
         dto.Role = this.Role;
-
+        dto.Public = this.Public;
         return dto;
 
     }

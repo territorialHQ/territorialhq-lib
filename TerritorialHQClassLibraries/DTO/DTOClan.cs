@@ -25,6 +25,12 @@ namespace TerritorialHQ_Library.DTO
         public string? Foundation { get; set; }
         [Display(Name = "Founder(s)")]
         public string? Founders { get; set; }
+        [Display(Name = "Clan Tag")]
+        public string? Tag { get; set; }
+        [Display(Name = "Primary Clan Color")]
+        public string? Color1 { get; set; }
+        [Display(Name = "Secondary Clan Color")]
+        public string? Color2 { get; set; }
         [Display(Name = "Clan Motto")]
         public string? Motto { get; set; }
         [Display(Name = "Custom Bot HttpGet Endpoint")]
@@ -35,15 +41,21 @@ namespace TerritorialHQ_Library.DTO
         public string? BannerFile { get; set; }
         [Display(Name = "Discord server link")]
         public string? DiscordLink { get; set; }
-        [Display(Name = "Description")]
+        [Display(Name = "Overview / Short Description")]
         public string? Description { get; set; }
+        [Display(Name = "Clan History")]
+        public string? History { get; set; }
+        [Display(Name = "Community")]
+        public string? Community { get; set; }
+        [Display(Name = "Features")]
+        public string? Features { get; set; }
+        [Display(Name = "Miscellaneous")]
+        public string? Miscellaneous { get; set; }
         [Display(Name = "Published")]
         public bool IsPublished { get; set; }
         [Display(Name = "In Review")]
         public bool InReview { get; set; }
 
-        public virtual List<DTOAppUser> AssignedAppUsers { get; set; } = new();
-
-
+        public virtual List<DTOClanUserRelation> AssignedAppUsers { get; set; } = new();
     }
 }

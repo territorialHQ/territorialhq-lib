@@ -15,6 +15,7 @@ namespace TerritorialHQ_Library.DTO
     public class DTOJournalArticle : IDto
     {
         public string? Id { get; set; }
+        public string? Author { get; set; }
 
         [Display(Name = "Title / Headline")]
         public string? Title { get; set; }

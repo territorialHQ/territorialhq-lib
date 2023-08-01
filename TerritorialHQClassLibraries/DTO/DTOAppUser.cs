@@ -14,6 +14,7 @@ namespace TerritorialHQ_Library.DTO
         public string? Id { get; set; }
         public string? UserName { get; set; }
         public ulong DiscordId { get; set; }
+        public bool Public { get; set; }
         public AppUserRole? Role { get; set; }
     }
 }

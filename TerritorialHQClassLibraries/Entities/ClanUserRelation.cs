@@ -32,10 +32,17 @@ public class ClanUserRelation : IEntity
         dto.Id = this.Id;
         dto.ClanId = this.ClanId;
         dto.AppUserId = this.AppUserId;
+        dto.AppDiscordId = this.AppUser?.DiscordId;
         dto.AppUserName = this.AppUser?.UserName;
 
         return dto;
     }
 
-    public void MapDto(IDto dto) { }
+    public void MapDto(IDto dto) { 
+        var relation = (DTOClanUserRelation)dto;
+
+        this.Id = relation.Id;
+        this.ClanId = relation.ClanId;
+        this.AppUserId = relation.AppUserId;
+    }
 }
