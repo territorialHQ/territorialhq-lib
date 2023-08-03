@@ -20,7 +20,7 @@ namespace TerritorialHQ_Library.DTO
         public string? Name { get; set; }
         [Required]
         [Display(Name = "Discord Guild ID")]
-        public ulong? GuildId { get; set; }
+        public string? GuildId { get; set; }
         [Display(Name = "Date / Period of Foundation")]
         public string? Foundation { get; set; }
         [Display(Name = "Founder(s)")]
@@ -41,7 +41,9 @@ namespace TerritorialHQ_Library.DTO
         public string? BannerFile { get; set; }
         [Display(Name = "Discord server link")]
         public string? DiscordLink { get; set; }
-        [Display(Name = "Overview / Short Description")]
+        [Display(Name = "Short Overview")]
+        public string? Overview { get; set; }
+        [Display(Name = "General Description")]
         public string? Description { get; set; }
         [Display(Name = "Clan History")]
         public string? History { get; set; }

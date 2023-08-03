@@ -20,7 +20,7 @@ public class Clan : IEntity
     public string? Creator { get; set; }
 
     public string? Name { get; set; }
-    public ulong? GuildId { get; set; }
+    public string? GuildId { get; set; }
     public string? Foundation { get; set; }
     public string? Founders { get; set; }
     public string? Tag { get; set; }
@@ -31,6 +31,7 @@ public class Clan : IEntity
     public string? LogoFile { get; set; }
     public string? BannerFile { get; set; }
     public string? DiscordLink { get; set; }
+    public string? Overview { get; set; }
     public string? Description { get; set; }
     public string? History { get; set; }
     public string? Community { get; set; }
@@ -60,6 +61,7 @@ public class Clan : IEntity
             LogoFile = this.LogoFile,
             BannerFile = this.BannerFile,
             DiscordLink = this.DiscordLink,
+            Overview = this.Overview,
             Description = this.Description,
             History = this.History,
             Community = this.Community,
@@ -99,6 +101,7 @@ public class Clan : IEntity
         this.LogoFile = clan.LogoFile;
         this.BannerFile = clan.BannerFile;
         this.DiscordLink = clan.DiscordLink;
+        this.Overview = clan.Overview;
         this.Description = clan.Description;
         this.History = clan.History;
         this.Community = clan.Community;
