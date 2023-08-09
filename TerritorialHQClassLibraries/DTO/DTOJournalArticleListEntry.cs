@@ -17,6 +17,7 @@ namespace TerritorialHQ_Library.DTO
         public string? Subtitle { get; set; }
         public DateTime PublishFrom { get; set; }
         public bool IsPublished { get; set; }
+        public bool IsCleared { get; set; }
         public string? Teaser { get; set; }
         public string? Image { get; set; }
         public bool IsSticky { get; set; }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,12 +26,16 @@ namespace TerritorialHQ_Library.DTO
         public string? Foundation { get; set; }
         [Display(Name = "Founder(s)")]
         public string? Founders { get; set; }
+        [Display(Name = "Leader(s)")]
+        public string? Leader { get; set; }
         [Display(Name = "Clan Tag")]
         public string? Tag { get; set; }
-        [Display(Name = "Primary Clan Color")]
+        [Display(Name = "Primary Color")]
         public string? Color1 { get; set; }
-        [Display(Name = "Secondary Clan Color")]
+        [Display(Name = "Secondary Color")]
         public string? Color2 { get; set; }
+        [Display(Name = "Use colors for clan page")]
+        public bool UseColorForPage { get; set; }
         [Display(Name = "Clan Motto")]
         public string? Motto { get; set; }
         [Display(Name = "Custom Bot HttpGet Endpoint")]
@@ -59,5 +64,7 @@ namespace TerritorialHQ_Library.DTO
         public bool InReview { get; set; }
 
         public virtual List<DTOClanUserRelation> AssignedAppUsers { get; set; } = new();
+
+        public virtual List<DTOClanRelation> ClanRelations { get; set; } = new();
     }
 }

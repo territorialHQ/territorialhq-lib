@@ -16,5 +16,7 @@ public enum AppUserRole
     [Display(Name = "Journalist")]
     Journalist = 3,
     [Display(Name = "Moderator")]
-    Moderator = 4
+    Moderator = 4,
+    [Display(Name = "Editor")]
+    Editor = 5
 }

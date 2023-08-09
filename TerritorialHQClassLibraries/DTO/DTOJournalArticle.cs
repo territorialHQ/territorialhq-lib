@@ -33,6 +33,9 @@ namespace TerritorialHQ_Library.DTO
 
         public bool IsPublished => (DateTime.Now >= PublishFrom) && (PublishTo == null ? true : DateTime.Now <= PublishTo);
 
+        [Display(Name = "Cleared for publish")]
+        public bool IsCleared { get; set; }
+
         [Display(Name = "Teaser text")]
         public string? Teaser { get; set; }
 

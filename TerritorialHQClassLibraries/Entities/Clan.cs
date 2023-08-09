@@ -23,10 +23,12 @@ public class Clan : IEntity
     public string? GuildId { get; set; }
     public string? Foundation { get; set; }
     public string? Founders { get; set; }
+    public string? Leader { get; set; }
     public string? Tag { get; set; }
     public string? Motto { get; set; }
     public string? Color1 { get; set; }
     public string? Color2 { get; set; }
+    public bool UseColorForPage { get; set; }
     public string? BotEndpoint { get; set; }
     public string? LogoFile { get; set; }
     public string? BannerFile { get; set; }
@@ -42,6 +44,9 @@ public class Clan : IEntity
 
     public virtual List<ClanUserRelation> ClanUserRelations { get; set; }
 
+    [InverseProperty("Clan")]
+    public virtual List<ClanRelation> ClanRelations { get; set; }
+
     public IDto GetDto()
     {
         var dto = new DTOClan
@@ -53,9 +58,11 @@ public class Clan : IEntity
             GuildId = this.GuildId,
             Foundation = this.Foundation,
             Founders = this.Founders,
+            Leader = this.Leader,
             Motto = this.Motto,
             Color1 = this.Color1,
             Color2 = this.Color2,
+            UseColorForPage = this.UseColorForPage,
             Tag = this.Tag,
             BotEndpoint = this.BotEndpoint,
             LogoFile = this.LogoFile,
@@ -77,6 +84,17 @@ public class Clan : IEntity
                 AppDiscordId = r.AppUser!.DiscordId,
                 AppUserName = r.AppUser!.UserName,
                 Role = r.AppUser!.Role
+            })?.ToList() ?? new(),
+
+            ClanRelations = this.ClanRelations?.Select(r => new DTOClanRelation()
+            {
+                Id = r.Id,
+                TargetClanId = r.TargetClanId,
+                TargetClanName = r.TargetClan?.Tag,
+                TargetClanLogo = r.TargetClan?.LogoFile,
+                DiplomaticRelation = r.DiplomaticRelation,
+                HierachicalRelation = r.HierachicalRelation,
+                MilitaryRelation = r.MilitaryRelation
             })?.ToList() ?? new()
         };
 
@@ -93,9 +111,11 @@ public class Clan : IEntity
         this.GuildId = clan.GuildId;
         this.Foundation = clan.Foundation;
         this.Founders = clan.Founders;
+        this.Leader = clan.Leader;
         this.Motto = clan.Motto;
         this.Color1 = clan.Color1;
         this.Color2 = clan.Color2;
+        this.UseColorForPage = clan.UseColorForPage;
         this.Tag = clan.Tag;
         this.BotEndpoint = clan.BotEndpoint;
         this.LogoFile = clan.LogoFile;

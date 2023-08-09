@@ -33,6 +33,9 @@ public class JournalArticle : IEntity
     [DisplayFormat(DataFormatString = "{0:d}")]
     public DateTime? PublishTo { get; set; }
 
+    [Display(Name = "Cleared for Publish")]
+    public bool IsCleared { get; set; }
+
     [Display(Name = "Teaser text")]
     public string? Teaser { get; set; }
 
@@ -58,6 +61,7 @@ public class JournalArticle : IEntity
         dto.Subtitle = this.Subtitle;
         dto.PublishFrom = this.PublishFrom;
         dto.PublishTo = this.PublishTo;
+        dto.IsCleared = this.IsCleared;
         dto.Teaser = this.Teaser;
         dto.Body = this.Body;
         dto.Image = this.Image;
@@ -75,6 +79,7 @@ public class JournalArticle : IEntity
         this.Subtitle = article.Subtitle;
         this.PublishFrom = article.PublishFrom;
         this.PublishTo = article.PublishTo;
+        this.IsCleared = article.IsCleared;
         this.Teaser = article.Teaser;
         this.Body = article.Body;
         this.Image = article.Image;
@@ -92,6 +97,7 @@ public class JournalArticle : IEntity
             Subtitle = this.Subtitle,
             PublishFrom = this.PublishFrom,
             IsPublished = (DateTime.Now >= this.PublishFrom) && (PublishTo == null ? true : DateTime.Now <= this.PublishTo),
+            IsCleared = this.IsCleared,
             Teaser = this.Teaser,
             Image = this.Image,
             IsSticky = this.IsSticky

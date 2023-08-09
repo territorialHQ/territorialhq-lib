@@ -9,14 +9,10 @@ using TerritorialHQ_Library.Entities;
 
 namespace TerritorialHQ_Library.DTO
 {
-    public class DTOAppUser : IDto
+    public class DTOAppUserRoleRelation : IDto
     {
         public string? Id { get; set; }
-        public string? UserName { get; set; }
-        public ulong DiscordId { get; set; }
-        public bool Public { get; set; }
+        public string? AppUserId { get; set; }
         public AppUserRole? Role { get; set; }
-
-        public List<DTOAppUserRoleRelation> Roles { get; set; } = new();
     }
 }

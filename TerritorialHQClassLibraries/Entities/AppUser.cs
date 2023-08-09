@@ -25,6 +25,8 @@ public class AppUser : IEntity
     [DisplayName("Role")]
     public AppUserRole? Role { get; set; }
 
+    public virtual List<AppUserRoleRelation> Roles { get; set; }
+
     public void MapDto(IDto dto)
     {
         var user = (DTOAppUser)dto;
@@ -44,6 +46,9 @@ public class AppUser : IEntity
         dto.DiscordId = this.DiscordId;
         dto.Role = this.Role;
         dto.Public = this.Public;
+
+        dto.Roles = Roles.Select(r => new DTOAppUserRoleRelation() { Id = r.Id, Role = r.Role }).ToList();
+
         return dto;
 
     }
