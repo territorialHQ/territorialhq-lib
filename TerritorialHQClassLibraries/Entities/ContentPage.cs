@@ -19,21 +19,36 @@ public class ContentPage : IEntity
     public string? DisplayName { get; set; }
     public string? Content { get; set; }
     public string? SidebarContent { get; set; }
-
     public string? BannerImage { get; set; }
+    public bool IsPublished { get; set; }
+    public bool InReview { get; set; }
+
+    [JsonIgnore]
+    public virtual List<ContentPageUserRelation> ContentPageUserRelations { get; set; }
 
     [JsonIgnore]
     public virtual List<NavigationEntry>? NavigationEntries { get; set; }
 
     public IDto GetDto()
     {
-        var dto = new DTOContentPage();
+        var dto = new DTOContentPage
+        {
+            Id = this.Id,
+            DisplayName = this.DisplayName,
+            Content = this.Content,
+            SidebarContent = this.SidebarContent,
+            BannerImage = this.BannerImage,
+            IsPublished = this.IsPublished,
+            InReview = this.InReview,
 
-        dto.Id = this.Id;
-        dto.DisplayName = this.DisplayName;
-        dto.Content = this.Content;
-        dto.SidebarContent = this.SidebarContent;
-        dto.BannerImage = this.BannerImage;
+            AssignedAppUsers = this.ContentPageUserRelations?.Select(r => new DTOContentPageUserRelation()
+            {
+                Id = r.AppUser!.Id,
+                AppUserId = r.AppUser!.Id,
+                AppDiscordId = r.AppUser!.DiscordId,
+                AppUserName = r.AppUser!.UserName
+            })?.ToList() ?? new(),
+        };
 
         return dto;
     }
@@ -45,6 +60,8 @@ public class ContentPage : IEntity
         this.DisplayName = page.DisplayName;
         this.Content = page.Content;
         this.SidebarContent = page.SidebarContent;
-        this.BannerImage = page.BannerImage;    
+        this.BannerImage = page.BannerImage;  
+        this.IsPublished = page.IsPublished;
+        this.InReview = page.InReview;
     }
 }

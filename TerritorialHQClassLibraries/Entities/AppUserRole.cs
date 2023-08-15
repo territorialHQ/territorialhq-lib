@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace TerritorialHQ_Library.Entities;
 
@@ -18,5 +19,7 @@ public enum AppUserRole
     [Display(Name = "Moderator")]
     Moderator = 4,
     [Display(Name = "Editor")]
-    Editor = 5
+    Editor = 5,
+    [Display(Name = "Writer")]
+    Writer = 6
 }

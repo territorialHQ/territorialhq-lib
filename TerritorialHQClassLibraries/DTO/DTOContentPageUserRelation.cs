@@ -9,10 +9,10 @@ using TerritorialHQ_Library.Entities;
 
 namespace TerritorialHQ_Library.DTO
 {
-    public class DTOClanUserRelation : IDto
+    public class DTOContentPageUserRelation : IDto
     {
         public string? Id { get; set; }
-        public string? ClanId { get; set; }
+        public string? ContentPageId { get; set; }
         public string? AppUserId { get; set; }
         public ulong? AppDiscordId { get; set; }
         public string? AppUserName { get; set; }

@@ -83,7 +83,6 @@ public class Clan : IEntity
                 AppUserId = r.AppUser!.Id,
                 AppDiscordId = r.AppUser!.DiscordId,
                 AppUserName = r.AppUser!.UserName,
-                Role = r.AppUser!.Role
             })?.ToList() ?? new(),
 
             ClanRelations = this.ClanRelations?.Select(r => new DTOClanRelation()
