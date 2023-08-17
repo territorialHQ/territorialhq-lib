@@ -79,7 +79,7 @@ public class Clan : IEntity
 
             AssignedAppUsers = this.ClanUserRelations?.Select(r => new DTOClanUserRelation()
             {
-                Id = r.AppUser!.Id,
+                Id = r.Id,
                 AppUserId = r.AppUser!.Id,
                 AppDiscordId = r.AppUser!.DiscordId,
                 AppUserName = r.AppUser!.UserName,
